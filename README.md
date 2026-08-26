@@ -12,6 +12,9 @@ on **GitHub Pages**. No backend, no map token, no build step.
 Explore the architecture 
 https://manish-bilore.github.io/nagpur-duct/architecture/
 
+Explore the Nagpur DUCT
+https://manish-bilore.github.io/nagpur-duct/
+
 ## Quick start (local preview)
 
 Serve over HTTP rather than opening the file directly — and use the bundled
