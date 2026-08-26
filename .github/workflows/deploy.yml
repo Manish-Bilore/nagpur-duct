@@ -33,6 +33,11 @@ jobs:
           # code + shell
           cp index.html LICENSE.md dist/
           cp -r src styles dist/
+          # modelling architecture diagram (self-contained single file)
+          if [ -f architecture/index.html ]; then
+            mkdir -p dist/architecture
+            cp architecture/index.html dist/architecture/
+          fi
           # data the viewer fetches at runtime (NOT raw model output)
           mkdir -p dist/data
           cp data/metadata.json data/stations.json dist/data/
