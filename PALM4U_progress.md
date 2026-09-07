@@ -108,16 +108,6 @@ PALM 25.10, 480 × 480 × 112, 48 ranks, 1 h simulated, 2834 timesteps.
 | w\* | ~2.0 m/s |
 | div_new | ~1.2 × 10⁻⁵ |
 
-**Two expectations were wrong.**
-
-*RTM was not the cost risk.* I flagged SVF/raytracing repeatedly as the term
-that could consume hours and tens of GB. It is 0.02% of runtime and 2 s of
-setup at 10 m. It will grow at 2 m but cannot dominate.
-
-*`poisfft` was the wrong solver choice.* Justified on fixed per-call cost from a
-24k-point benchmark where `pres` was 6%. On the real 480² × 112 domain across
-48 ranks it is 46.55% — the all-to-all transposes scale badly. A multigrid
-comparison run is in progress; it is the single largest lever on the 2 m cost.
 
 ## 5. Revised cost projection (measured, not assumed)
 
